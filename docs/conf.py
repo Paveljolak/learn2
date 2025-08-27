@@ -44,7 +44,7 @@ html_context['display_lower_left'] = True
 
 # Repo and environment info
 REPO_NAME = os.environ.get('REPO_NAME', '')
-
+OWNER = os.environ.get('OWNER', '') 
 
 # Use ALL_VERSIONS from workflow environment
 all_versions_env = os.environ.get("ALL_VERSIONS", "")
