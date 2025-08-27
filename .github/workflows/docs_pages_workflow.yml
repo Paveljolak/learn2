@@ -1,9 +1,13 @@
 name: docs_pages_workflow
 
+
 on:
   push:
     branches:
       - '*'   # trigger on any branch
+
+permissions:
+  contents: write
 
 jobs:
   build_docs_job:
