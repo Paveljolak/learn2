@@ -8,7 +8,7 @@ Welcome to Main documentation!
 
 Main documentation.
 
-Update
+Update again.
 
 .. toctree::
    :maxdepth: 2
