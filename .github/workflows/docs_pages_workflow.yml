@@ -34,13 +34,12 @@ jobs:
 
         # Install system dependencies
         sudo apt-get update
-        sudo apt-get install -y git rsync python3-sphinx python3-sphinx-rtd-theme python3-stemmer python3-git python3-venv python3-pip python3-setuptools make
+        sudo apt-get install -y git rsync python3-venv python3-pip make
 
         # Create virtual environment
         python3 -m venv venv
 
         # Install Python packages using venv pip BEFORE activation
-        # ./venv/bin/pip install --upgrade pip rinohtype pygments gitpython sphinx sphinx-rtd-theme 
         ./venv/bin/pip install --upgrade pip
         ./venv/bin/pip install -r requirements.txt
 
