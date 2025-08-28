@@ -32,7 +32,6 @@ pygments_style = None
 # -- HTML output -------------------------------------------------------------
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
-htmlhelp_basename = 'helloWorlddoc'
 
 # -- RTD lower-left menu setup -----------------------------------------------
 try:
@@ -62,12 +61,7 @@ html_context['versions'] = [
     (v, f"{GITHUB_PAGES_BASE}/{v}/") for v in ALL_VERSIONS
 ]
 
-# -- Downloads URLs (no /en/ prefix) ----------------------------------------
-project_name = project.replace(' ', '_')
-#html_context['downloads'] = [
-#    ('pdf', f'/{REPO_NAME}/{current_version}/{project_name}-docs_{current_version}.pdf'),
-#    ('epub', f'/{REPO_NAME}/{current_version}/{project_name}-docs_{current_version}.epub')
-#]
+# project_name = project.replace(' ', '_')
 
 html_context['current_language'] = ''
 html_context['language'] = ''
@@ -78,9 +72,4 @@ html_context['github_user'] = 'maltfield'
 html_context['github_repo'] = REPO_NAME
 html_context['github_version'] = f'{current_version}/docs/'
 
-# -- Rinoh PDF (optional) ---------------------------------------------------
-rinoh_documents = [
-    (master_doc, 'target', f'{project} Documentation', f'© {copyright}')
-]
-today_fmt = "%B %d, %Y"
 
