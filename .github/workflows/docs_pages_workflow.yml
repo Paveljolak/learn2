@@ -40,7 +40,9 @@ jobs:
         python3 -m venv venv
 
         # Install Python packages using venv pip BEFORE activation
-        ./venv/bin/pip install --upgrade pip rinohtype pygments gitpython sphinx sphinx-rtd-theme 
+        # ./venv/bin/pip install --upgrade pip rinohtype pygments gitpython sphinx sphinx-rtd-theme 
+        ./venv/bin/pip install --upgrade pip
+        ./venv/bin/pip install -r requirements.txt
 
         # Activate virtual environment
         source venv/bin/activate
