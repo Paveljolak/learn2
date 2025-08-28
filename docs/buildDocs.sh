@@ -28,8 +28,6 @@ git checkout "$CURRENT_BRANCH"
 
 # build docs for current branch
 sphinx-build -b html docs/ "$DOCS_DIR"
-sphinx-build -b rinoh docs/ "$DOCS_DIR/rinoh"
-sphinx-build -b epub docs/ "$DOCS_DIR/epub"
 
 # copy to temp build dir under branch name
 mkdir -p "$BUILD_DIR/$CURRENT_BRANCH"
