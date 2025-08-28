@@ -16,10 +16,10 @@
          > (0,0,1,0,2) title page author [Sphinx] > DEFAULT
            (0,0,0,0,2) body [Sphinx] > default
         SingleStyledText('© 2025, Ubiquity Robotics')
-    Paragraph('August 27, 2025', style='title page date')
+    Paragraph('August 28, 2025', style='title page date')
          > (0,0,1,0,2) title page date [Sphinx] > DEFAULT
            (0,0,0,0,2) body [Sphinx] > default
-        SingleStyledText('August 27, 2025')
+        SingleStyledText('August 28, 2025')
 ---------------------------------- page i ----------------------------------
 #### FlowablesContainer('background')
   StaticGroupedFlowables()
