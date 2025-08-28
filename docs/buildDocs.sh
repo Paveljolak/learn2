@@ -15,6 +15,7 @@ source venv/bin/activate
 CURRENT_BRANCH=${CURRENT_BRANCH:-$(git rev-parse --abbrev-ref HEAD)}
 ALL_VERSIONS=${ALL_VERSIONS:-$CURRENT_BRANCH}
 REPO_NAME="${GITHUB_REPOSITORY##*/}"
+LATEST_VERSION="jazzy"
 
 # prepare build directories
 BUILD_DIR=$(mktemp -d)
@@ -47,10 +48,10 @@ cat > "$GH_DIR/index.html" <<EOF
 <html>
    <head>
       <title>${REPO_NAME} Docs</title>
-      <meta http-equiv="refresh" content="0; url='/${REPO_NAME}/main/'" />
+      <meta http-equiv="refresh" content="0; url='/${REPO_NAME}/${LATEST_VERSION}/'" />
    </head>
    <body>
-      <p>Please wait while you're redirected to our <a href="/${REPO_NAME}main/">documentation</a>.</p>
+      <p>Please wait while you're redirected to our <a href="/${REPO_NAME}/${LATEST_VERSION}/">documentation</a>.</p>
    </body>
 </html>
 EOF

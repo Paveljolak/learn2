@@ -68,7 +68,7 @@ html_context['language'] = ''
 
 # -- "Edit on GitHub" links --------------------------------------------------
 html_context['display_github'] = True
-html_context['github_user'] = 'maltfield'
+html_context['github_user'] = ''
 html_context['github_repo'] = REPO_NAME
 html_context['github_version'] = f'{current_version}/docs/'
 
