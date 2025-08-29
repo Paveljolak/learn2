@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROS Workstation Setup &mdash; Ubiquity Robotics Documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=96017b54"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Started Guide (Per Model)" href="models/main_getting_started_models.html" />
+    <link rel="prev" title="Start Here" href="requirements.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ubiquity Robotics Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Start Here</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ROS Workstation Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#native-linux-machine">Native Linux Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#virtual-machine-setup-windows-macos">Virtual Machine Setup (Windows, MacOS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-ros-2-and-ubiquity-software">Install ROS 2 and Ubiquity Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enable-zeroconf-networking">Enable Zeroconf Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-variables">Environment Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#if-zeroconf-works">If Zeroconf Works</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-zeroconf-fails">If Zeroconf Fails</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#synchronize-time-robot-workstation">Synchronize Time (Robot + Workstation)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#on-your-laptop-workstation">On your <strong>laptop (workstation)</strong>:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#on-the-magni-robot">On the <strong>Magni robot</strong>:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-the-connection">Test the Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#drive-magni-from-workstation">Drive Magni from Workstation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary-checklist">Summary Checklist</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models/main_getting_started_models.html">Getting Started Guide (Per Model)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Magni Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../magni_sim/simulation.html">Magni Robot Simulation Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Magni 6 Models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../magni6_models/models/main_magni_models.html">Magni 6 Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../magni6_models/full_assembly/main_assembly_models.html">Full Assembly Guide (per Model)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/beginner/main_software_beginner.html">Magni 6 Software Beginner Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/advanced/main_software_advanced.html">Magni 6 Software Advanced Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/beginner/ezmap.html">Ez-Map Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hardware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/beginner/main_beginner_hardware.html">Hardware (Beginners Guide)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/advanced/main_advanced_hardware.html">Hardware (Advanced)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects for Magni Robots</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projects/mini/main_projects_mini.html">Magni 6 Mini Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/medi/main_projects_medi.html">Magni 6 Medi Projects</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ubiquity Robotics Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ROS Workstation Setup</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com//learn2/blob/jazzy-devel/docs/getting_started/workstation.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ros-workstation-setup">
+<h1>ROS Workstation Setup<a class="headerlink" href="#ros-workstation-setup" title="Link to this heading"></a></h1>
+<p>A <strong>ROS Workstation</strong> is a desktop or laptop computer with a full ROS (Robot Operating System) setup that connects to your robot over the network.
+It allows you to:</p>
+<ul class="simple">
+<li><p>Monitor internal robot activity.</p></li>
+<li><p>Visualize robot sensors and movement via tools like <strong>RViz</strong>.</p></li>
+<li><p>Send commands and offload computational tasks.</p></li>
+<li><p>Run graphical tools and perform PID tuning.</p></li>
+<li><p>Use camera tools like <cite>image_view</cite> to see robot vision in real time.</p></li>
+</ul>
+<p>Simply, it allows you to interact with your robot. Connect to it, drive it, modify its software.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is <strong>NOT</strong> about virtual simulated environments. However, powerful workstations can run simulation tools as well.</p>
+</div>
+<hr class="docutils" />
+<section id="native-linux-machine">
+<h2>Native Linux Machine<a class="headerlink" href="#native-linux-machine" title="Link to this heading"></a></h2>
+<p>If you’re using a native Ubuntu Linux system:</p>
+<ol class="arabic simple">
+<li><p>Ensure you’re running a <strong>compatible Ubuntu LTS version</strong>. (Ubuntu 24.04 would be sufficient)</p></li>
+<li><p><a class="reference external" href="https://help.ubuntu.com/community/Installation">Install Ubuntu</a> if needed.</p></li>
+<li><p><a class="reference external" href="https://docs.ros.org/en/jazzy/Installation.html">Install ROS 2</a>.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="virtual-machine-setup-windows-macos">
+<h2>Virtual Machine Setup (Windows, MacOS)<a class="headerlink" href="#virtual-machine-setup-windows-macos" title="Link to this heading"></a></h2>
+<p>If you have Windows or MacOS you should use Virtual Machine.</p>
+<ol class="arabic simple">
+<li><p>Install <a class="reference external" href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></p></li>
+<li><p>Download an Ubuntu LTS VM (e.g., <a class="reference external" href="https://www.osboxes.org/kubuntu/">Kubuntu from OSBoxes</a>).</p></li>
+<li><p>Unzip and import the <cite>.vdi</cite> file into VirtualBox.</p></li>
+<li><p>Configure the VM:</p>
+<ul class="simple">
+<li><p><strong>RAM:</strong> ≥ 2048 MB (recommend 4096 MB)</p></li>
+<li><p><strong>Video Memory:</strong> ≥ 64 MB (recommend 128 MB)</p></li>
+<li><p><strong>Storage:</strong> ≥ 25 GB</p></li>
+<li><p><strong>Network Adapter:</strong> Set to <cite>Bridged Adapter</cite> (essential for LAN access)</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Be careful which system you’re typing commands into. You’ll have:</p>
+<ul class="simple">
+<li><p>Robot OS (via SSH)</p></li>
+<li><p>Workstation VM</p></li>
+<li><p>Host OS (your main OS)</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="install-ros-2-and-ubiquity-software">
+<h2>Install ROS 2 and Ubiquity Software<a class="headerlink" href="#install-ros-2-and-ubiquity-software" title="Link to this heading"></a></h2>
+<p>Follow ROS 2 install guide: <a class="reference external" href="https://docs.ros.org/en/jazzy/Installation.html">ROS 2 Install Guide</a></p>
+<p>Then add Ubiquity’s package repository to get Magni-specific tools:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># On Ubuntu + ROS system</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="enable-zeroconf-networking">
+<h2>Enable Zeroconf Networking<a class="headerlink" href="#enable-zeroconf-networking" title="Link to this heading"></a></h2>
+<p>Install Avahi services for local network name resolution:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libnss-mdns<span class="w"> </span>avahi-daemon<span class="w"> </span>avahi-utils
+</pre></div>
+</div>
+<p>Now you can ping the robot:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ping<span class="w"> </span>ROBOTNAME.local
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading"></a></h2>
+<section id="if-zeroconf-works">
+<h3>If Zeroconf Works<a class="headerlink" href="#if-zeroconf-works" title="Link to this heading"></a></h3>
+<p>Set these environment variables <strong>each session</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://ROBOTNAME.local:11311
+<span class="nb">export</span><span class="w"> </span><span class="nv">ROS_HOSTNAME</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>.local
+</pre></div>
+</div>
+<p>Make them <strong>persistent</strong> by adding to <cite>~/.bashrc</cite>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ROS_MASTER_URI=http://ROBOTNAME.local:11311&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ROS_HOSTNAME=</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">.local&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Don’t do this</strong> if using <strong>multiple robots</strong> – set them per terminal manually.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="if-zeroconf-fails">
+<h3>If Zeroconf Fails<a class="headerlink" href="#if-zeroconf-fails" title="Link to this heading"></a></h3>
+<p>We recommend setting <strong>static IPs</strong> or using <strong>DHCP reservations</strong>.</p>
+<ol class="arabic">
+<li><p>Configure system for mDNS</p>
+<blockquote>
+<div><p>Edit <cite>/etc/systemd/resolved.conf</cite>:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">MulticastDNS</span><span class="o">=</span><span class="s">yes</span>
+</pre></div>
+</div>
+<p>Append to <cite>/etc/NetworkManager/conf.d/mdns.conf</cite>:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[connection]</span>
+<span class="na">connection.mdns</span><span class="o">=</span><span class="s">2</span>
+</pre></div>
+</div>
+<p>Restart services:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>service<span class="w"> </span>NetworkManager<span class="w"> </span>restart
+sudo<span class="w"> </span>service<span class="w"> </span>systemd-resolved<span class="w"> </span>restart
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Use IP Addresses</p>
+<blockquote>
+<div><p>Replace <cite>ROBOTNAME</cite> and <cite>HOSTNAME</cite> with IPs:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://&lt;robot_ip&gt;:11311
+<span class="nb">export</span><span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span>&lt;workstation_ip&gt;
+</pre></div>
+</div>
+<p>To make it persistent:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ROS_MASTER_URI=http://&lt;robot_ip&gt;:11311&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ROS_IP=&lt;workstation_ip&gt;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Again, skip this if you’re working with multiple robots.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="synchronize-time-robot-workstation">
+<h2>Synchronize Time (Robot + Workstation)<a class="headerlink" href="#synchronize-time-robot-workstation" title="Link to this heading"></a></h2>
+<p>Time synchronization is critical for ROS topic communication.</p>
+<section id="on-your-laptop-workstation">
+<h3>On your <strong>laptop (workstation)</strong>:<a class="headerlink" href="#on-your-laptop-workstation" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>chronyc<span class="w"> </span>-a<span class="w"> </span><span class="nb">local</span><span class="w"> </span>stratum<span class="w"> </span><span class="m">10</span>
+sudo<span class="w"> </span>chronyc<span class="w"> </span>-a<span class="w"> </span>allow<span class="w"> </span><span class="m">0</span>/0
+</pre></div>
+</div>
+</section>
+<section id="on-the-magni-robot">
+<h3>On the <strong>Magni robot</strong>:<a class="headerlink" href="#on-the-magni-robot" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>magni-base
+sudo<span class="w"> </span>chronyc<span class="w"> </span>-a<span class="w"> </span>add<span class="w"> </span>server<span class="w"> </span>&lt;yourLaptopName&gt;<span class="w"> </span>iburst
+sudo<span class="w"> </span>chronyc<span class="w"> </span>-a<span class="w"> </span>burst<span class="w"> </span><span class="m">2</span>/4
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>magni-base
+</pre></div>
+</div>
+<p>Set your timezone:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>tzdata
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="test-the-connection">
+<h2>Test the Connection<a class="headerlink" href="#test-the-connection" title="Link to this heading"></a></h2>
+<p>In the <strong>workstation terminal</strong>, type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic<span class="w"> </span>list
+</pre></div>
+</div>
+<p>You should see a list of topics, including:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">cmd_vel</span>
+</pre></div>
+</div>
+<p>If yes, ROS is communicating with your robot.</p>
+</section>
+<hr class="docutils" />
+<section id="drive-magni-from-workstation">
+<h2>Drive Magni from Workstation<a class="headerlink" href="#drive-magni-from-workstation" title="Link to this heading"></a></h2>
+<p>Instead of running <cite>teleop_twist_keyboard</cite> on the robot, now run it from the workstation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard.py
+</pre></div>
+</div>
+<p>This sends velocity commands from the workstation to the robot via ROS.</p>
+</section>
+<hr class="docutils" />
+<section id="summary-checklist">
+<h2>Summary Checklist<a class="headerlink" href="#summary-checklist" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>Ubuntu LTS setup (native or VM)</p></td>
+</tr>
+<tr class="row-odd"><td><p>✅</p></td>
+<td><p>Installed correct ROS version</p></td>
+</tr>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>Installed Ubiquity Magni packages</p></td>
+</tr>
+<tr class="row-odd"><td><p>✅</p></td>
+<td><p>Zeroconf or static IP setup</p></td>
+</tr>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>Environment variables configured</p></td>
+</tr>
+<tr class="row-odd"><td><p>✅</p></td>
+<td><p>Time synchronization set up</p></td>
+</tr>
+<tr class="row-even"><td><p>✅</p></td>
+<td><p>Tested <code class="docutils literal notranslate"><span class="pre">rostopic</span> <span class="pre">list</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>✅</p></td>
+<td><p>Able to teleop from workstation</p></td>
+</tr>
+</tbody>
+</table>
+<p>You’re now ready to develop and monitor ROS-based robotics applications from your workstation!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="requirements.html" class="btn btn-neutral float-left" title="Start Here" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="models/main_getting_started_models.html" class="btn btn-neutral float-right" title="Getting Started Guide (Per Model)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ubiquity Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Docs</span>
+      v: jazzy-devel
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="https://Paveljolak.github.io/learn2/jazzy/">jazzy</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="https://Paveljolak.github.io/learn2/jazzy-devel/">jazzy-devel</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="https://Paveljolak.github.io/learn2/ros_kinetic/">ros_kinetic</a></dd>
+          
+        
+          
+          <dd><a href="https://Paveljolak.github.io/learn2/ros_neotic/">ros_neotic</a></dd>
+          
+        
+      </dl>
+      
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ez-Map Introduction &mdash; Ubiquity Robotics Documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=96017b54"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Magni 6 Images" href="images.html" />
+    <link rel="prev" title="Magni 6 Software Beginner Guide" href="main_software_beginner.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ubiquity Robotics Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/requirements.html">Start Here</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/workstation.html">ROS Workstation Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/models/main_getting_started_models.html">Getting Started Guide (Per Model)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Magni Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../magni_sim/simulation.html">Magni Robot Simulation Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Magni 6 Models</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../magni6_models/models/main_magni_models.html">Magni 6 Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../magni6_models/full_assembly/main_assembly_models.html">Full Assembly Guide (per Model)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="main_software_beginner.html">Magni 6 Software Beginner Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ez-Map Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#testing-the-versioning">TESTING THE VERSIONING:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#magni-robot">Magni Robot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lidar-sensor">LiDAR Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pi-camera">Pi Camera</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ez-map-software-image">EZ-Map Software Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-ez-map">How to use EZ-MAP</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started-with-ez-map">Getting Started with Ez_MAP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#connecting-to-the-robot">Connecting to the Robot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#opening-the-application">Opening the Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initial-setup">Initial Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#menus-actions">Menus &amp; Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remote-control">Remote Control:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mapping">Mapping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="images.html">Magni 6 Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openrmf.html">Open-RMF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/main_software_advanced.html">Magni 6 Software Advanced Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ez-Map Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#testing-the-versioning">TESTING THE VERSIONING:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#magni-robot">Magni Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lidar-sensor">LiDAR Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pi-camera">Pi Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ez-map-software-image">EZ-Map Software Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-use-ez-map">How to use EZ-MAP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started-with-ez-map">Getting Started with Ez_MAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-to-the-robot">Connecting to the Robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opening-the-application">Opening the Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-setup">Initial Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#menus-actions">Menus &amp; Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remote-control">Remote Control:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mapping">Mapping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#map-management">Map Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#landmarks">Landmarks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#localizing-on-a-loaded-map">Localizing on a Loaded Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#routes">Routes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hardware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/beginner/main_beginner_hardware.html">Hardware (Beginners Guide)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/advanced/main_advanced_hardware.html">Hardware (Advanced)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects for Magni Robots</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/mini/main_projects_mini.html">Magni 6 Mini Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/medi/main_projects_medi.html">Magni 6 Medi Projects</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ubiquity Robotics Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="main_software_beginner.html">Magni 6 Software Beginner Guide</a></li>
+      <li class="breadcrumb-item active">Ez-Map Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com//learn2/blob/jazzy-devel/docs/software/beginner/ezmap.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ez-map-introduction">
+<h1>Ez-Map Introduction<a class="headerlink" href="#ez-map-introduction" title="Link to this heading"></a></h1>
+<section id="testing-the-versioning">
+<h2>TESTING THE VERSIONING:<a class="headerlink" href="#testing-the-versioning" title="Link to this heading"></a></h2>
+<p>This should always appear.</p>
+<p>Welome to <strong>EZ-Map</strong> - a toolkit for mapping environments using LiDAR, setting up autonomous routes, or manaully driving a robot with video streaming and remote control.</p>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
+<p>Before you begin, make sure you have all the required hardware and components ready.</p>
+<section id="magni-robot">
+<h3>Magni Robot<a class="headerlink" href="#magni-robot" title="Link to this heading"></a></h3>
+<p>To run EZ-Map, you need a Magni robot.
+If you’re new to the platform, start with the <a class="reference internal" href="../../getting_started/requirements.html"><span class="doc">Start Here</span></a> guide.</p>
+<p>Choose your robot model and follow the relevant <a class="reference internal" href="../../getting_started/models/main_getting_started_models.html"><span class="doc">Getting Started guides</span></a> and the <a class="reference internal" href="../../magni6_models/full_assembly/main_assembly_models.html"><span class="doc">Full Assembly guides</span></a>.</p>
+</section>
+<section id="lidar-sensor">
+<h3>LiDAR Sensor<a class="headerlink" href="#lidar-sensor" title="Link to this heading"></a></h3>
+<p>A mounted LiDAR is required for mapping. EZ-Map currently supports the following models out of the box:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../hardware/beginner/lidars.html#n10-lidar"><span class="std std-ref">N10 - Short Range LiDAR</span></a></p></li>
+<li><p><a class="reference internal" href="../../hardware/beginner/lidars.html#ms1l-lidar"><span class="std std-ref">MS1L - Long Range LiDAR</span></a></p></li>
+</ul>
+<p>Other LiDARs may work if the appropriate ROS driver is installed.
+For unsupported models, contact Ubiquity Robotics support.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This documentation assumes you’re using a clean Ez-Map image.
+Disregard any manual configuration steps mentioned in other setup guides.</p>
+</div>
+</section>
+<section id="pi-camera">
+<h3>Pi Camera<a class="headerlink" href="#pi-camera" title="Link to this heading"></a></h3>
+<p>The Pi Camera provides video streaming and fiducial marker detection.
+It should come pre-mounted on Magni 6 Robots.</p>
+<p>If your camera is not installed, refer to the <a class="reference internal" href="../../magni6_models/full_assembly/main_assembly_models.html"><span class="doc">assembly guides</span></a> for your specific robot model.</p>
+</section>
+<section id="ez-map-software-image">
+<h3>EZ-Map Software Image<a class="headerlink" href="#ez-map-software-image" title="Link to this heading"></a></h3>
+<p>You will receive the Ez-Map <cite>img.xz</cite> software image by email.
+After downloading, follow the guide to flsh it to a microSD card.</p>
+<p>To verify the version you are using, refer to the Changelog.</p>
+</section>
+<section id="how-to-use-ez-map">
+<h3>How to use EZ-MAP<a class="headerlink" href="#how-to-use-ez-map" title="Link to this heading"></a></h3>
+<p>Once setup is complete and the robot has booted, you’re ready to start using Ez-Map.</p>
+</section>
+</section>
+<section id="getting-started-with-ez-map">
+<span id="id1"></span><h2>Getting Started with Ez_MAP<a class="headerlink" href="#getting-started-with-ez-map" title="Link to this heading"></a></h2>
+<section id="connecting-to-the-robot">
+<h3>Connecting to the Robot<a class="headerlink" href="#connecting-to-the-robot" title="Link to this heading"></a></h3>
+<p>Conect to the robot’s access point [TODO: Add link to guide here.], using a device with a web browser.
+Phones and tablest are ideal for mobility, but laptops also work.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If mobile data is enabled, disable it before connecting.
+The robot’s access point has no internet acess, and this can prevent proper routing.
+For best performance, only connect one device at a time.</p>
+</div>
+<p>—</p>
+</section>
+<section id="opening-the-application">
+<h3>Opening the Application<a class="headerlink" href="#opening-the-application" title="Link to this heading"></a></h3>
+<p>Once connected, open a browser and go to: <code class="docutils literal notranslate"><span class="pre">http://10.42.0.1:3000</span></code></p>
+<p>### Add to Home Screen (Optional)</p>
+<p>On Android Chrome, you can save the app to your home screen for better usability.</p>
+<p>[.. TODO: Image here homescreen]</p>
+<p>If the app does not launch in full screen, repeat the add-to-home-screen process until it show the proper icon.</p>
+<p>—</p>
+</section>
+<section id="initial-setup">
+<h3>Initial Setup<a class="headerlink" href="#initial-setup" title="Link to this heading"></a></h3>
+<p>At startup, you’ll be prompted to set the robot’s location and sensor orientation.
+You can skip it temporarily via the menu, but calibration is <strong>critical</strong> for proper robot operation.</p>
+<p>[TODO: Image here. calibrations]</p>
+<p>Access calibration later via the menu:</p>
+<p>[TODO: Image here. calibrations setup]</p>
+</section>
+<section id="menus-actions">
+<h3>Menus &amp; Actions<a class="headerlink" href="#menus-actions" title="Link to this heading"></a></h3>
+<p>Ez-Map uses icon-based menus.
+Locations may vary depending on scren orientation.</p>
+<p>[TODO: Table with images and explanations here.
+- viewswitch_landscape.
+- 100
+- calibrations
+- record_off
+- photo
+- settings]</p>
+<p>—</p>
+</section>
+<section id="remote-control">
+<h3>Remote Control:<a class="headerlink" href="#remote-control" title="Link to this heading"></a></h3>
+<p>When camera is connected, one view will show the video stream.</p>
+<p>Drive using on-screen joysticks or choose alternate control schemes from:</p>
+<p>[TODO: Image here. ]</p>
+<p>[TODO: Image here. ]</p>
+<p>If the battery icon appears gray:
+[TODO: image]</p>
+<p>Wait a few seonds. If it persists, the motor node or MCB might be disconected.</p>
+<p>—</p>
+</section>
+<section id="mapping">
+<h3>Mapping<a class="headerlink" href="#mapping" title="Link to this heading"></a></h3>
+<p>Switch to mapping view:</p>
+<p>[TODO: Image here.]</p>
+<p>[TODO: Image here.]</p>
+<p>If a checklist appears, wait or slightly move the robot to gather lidar data.
+Ensure all hardware is connected.</p>
+<section id="map-management">
+<h4>Map Management<a class="headerlink" href="#map-management" title="Link to this heading"></a></h4>
+<p>Open the map menu:</p>
+<p>[TODO: Image here.]</p>
+<p>[TODO: Image here.]</p>
+<ul class="simple">
+<li><p>View, load, or create maps.</p></li>
+<li><p>Resetting map sets the origin to current location.</p></li>
+<li><p>Switch between SLAM and localization modes.</p></li>
+<li><p><strong>Reminder:</strong> Maps are not auto-saved.</p></li>
+</ul>
+</section>
+<section id="landmarks">
+<h4>Landmarks<a class="headerlink" href="#landmarks" title="Link to this heading"></a></h4>
+<p>SLAM supports visual landmarks (e.g., ArUco markers):</p>
+<p>[TODO: image of arruco marker]</p>
+<p>Ensur correct camera calibration via:</p>
+<p>[TODO: calibration image]</p>
+</section>
+<section id="localizing-on-a-loaded-map">
+<h4>Localizing on a Loaded Map<a class="headerlink" href="#localizing-on-a-loaded-map" title="Link to this heading"></a></h4>
+<p>Drag and drop the robot icon to match real-world position:</p>
+<p>[TODO: Image here]</p>
+<p>Use rotation gesture to align direction. When done:</p>
+<p>[TODO: image here]</p>
+<p>After moving, the system will snap to position:</p>
+<p>[TODO: image here]</p>
+<p>—</p>
+</section>
+<section id="routes">
+<h4>Routes<a class="headerlink" href="#routes" title="Link to this heading"></a></h4>
+<p>Open route menu:</p>
+<p>[TODO: image here]</p>
+<p>Routes are tied to maps - Save the map to keep the routes.</p>
+<p><strong>Creating Routes</strong></p>
+<ul class="simple">
+<li><p>Double-tap to add goals.</p></li>
+<li><p>Tap between goals to add in-between points.</p></li>
+<li><p>Drag to reposition.</p></li>
+</ul>
+<p>[TODO: imge here]</p>
+<p><strong>Robot Movement</strong></p>
+<p>Use:</p>
+<p>[TODO: Image here]</p>
+<p>[TODO: Image here]</p>
+<p>To start movement. Robot drives to the nearest goal first.</p>
+<p>Stop using:</p>
+<p>[TODO: Image here]</p>
+<p><strong>Goal Actions</strong></p>
+<p>Hold a goal to assign actions (e.g., wait, play audio, set speed):</p>
+<p>[TODO: Image here touch]</p>
+<p>[TODO: Image here goalactions]</p>
+<p>Visual indicator shows asigned actions:</p>
+<p>[TODO: Image here changecolor]</p>
+<p><strong>Looping</strong></p>
+<p>Two types:</p>
+<ol class="arabic simple">
+<li><p><strong>Full Loop</strong> (connect first and last goal):</p></li>
+</ol>
+<p>[TODO: Image here looping]</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Ping-Pong</strong> (define opposite direction actions):</p></li>
+</ol>
+<p>[TODO: Image here]</p>
+<p><strong>Locking</strong></p>
+<p>Use [Lock Goal Movement] in the menu to prevent accidental edits on small screens.
+.. TODO: Check for image here.</p>
+<p>—</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Still experimental. Behaviour may change.</p>
+</div>
+<p>Open global triggers menu:</p>
+<p>[TODO: Image here]</p>
+<p>Example:</p>
+<ul class="simple">
+<li><p>On ArUco marker 3 -&gt; wait 1 sec -&gt; slow down.</p></li>
+<li><p>Battery &lt; 60% -&gt; stop driving</p></li>
+</ul>
+<p>[TODO: Image here]</p>
+<p>Another example:</p>
+<p>[TODO: Image here]</p>
+<p>Robot sees marker, loads map, and starts route automatically.
+Ensure robot starts near map origin.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="main_software_beginner.html" class="btn btn-neutral float-left" title="Magni 6 Software Beginner Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="images.html" class="btn btn-neutral float-right" title="Magni 6 Images" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ubiquity Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Docs</span>
+      v: jazzy-devel
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="https://Paveljolak.github.io/learn2/jazzy/">jazzy</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="https://Paveljolak.github.io/learn2/jazzy-devel/">jazzy-devel</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="https://Paveljolak.github.io/learn2/ros_kinetic/">ros_kinetic</a></dd>
+          
+        
+          
+          <dd><a href="https://Paveljolak.github.io/learn2/ros_neotic/">ros_neotic</a></dd>
+          
+        
+      </dl>
+      
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
