@@ -48,7 +48,10 @@ jobs:
 
         # Set current branch and all versions for version selector
         CURRENT_BRANCH="${GITHUB_REF_NAME}"
-        ALL_VERSIONS=$(git for-each-ref --format='%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages|main)$')
+        ALL_VERSIONS=$(git for-each-ref --format='%(refname:short)' refs/remotes/origin/ \
+          | sed 's|^origin/||' \
+          | grep -viE '^(HEAD|gh-pages|main)$' \
+          | grep -viE '^feature/')
         export CURRENT_BRANCH ALL_VERSIONS
 
         # Run the build script from docs directory
