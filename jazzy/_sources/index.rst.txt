@@ -98,6 +98,6 @@ Sections
    example
  
 
-# Redeploy
+.. Redeploy
 
 
