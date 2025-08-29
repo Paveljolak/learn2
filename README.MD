@@ -66,3 +66,34 @@ python3 -m http.server 8000
 ```
 
 > **Note:** Some images will show locally some will not. This is because we are hosting on GitHub pages, GitHub may look for the pictures in some other place and the relative path might not work when deployed. This is the case when having multiple in-line pictures.
+
+
+
+## Contributing
+
+To contribute to the documentation it would be the easiest to either for or clone the repo. 
+If you create a new branch make sure you list it in the worklfow line here:
+
+
+
+```bash
+
+cd .github/workflows/docs_new_pages.yml
+
+```
+
+and change the line:
+
+```yml
+
+ALL_VERSIONS=$(git for-each-ref --format='%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages|main)$')
+
+```
+
+change it to your new branches name
+
+```yml
+
+ALL_VERSIONS=$(git for-each-ref --format='%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages|main|[dev_branch_name])$')
+
+```
